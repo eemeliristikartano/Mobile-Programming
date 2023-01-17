@@ -1,1 +1,1 @@
-# Homework's from mobile programming school course.
+# Homework's from school's mobile programming course.
