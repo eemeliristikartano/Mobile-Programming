@@ -21,7 +21,7 @@ export default function App() {
     const uppreInputAsNumber = Number(uppreInput.replace(',', '.'));
     const lowerInputAsNumber = Number(lowerInput.replace(',', '.'));
     // If the numbers are valid.
-    if (isNumbers(uppreInputAsNumber, lowerInputAsNumber)) {
+    if (isNumber(uppreInputAsNumber) && isNumber(lowerInputAsNumber)) {
 
       // If the operation is an addtion.
       if (operation === '+') {
@@ -42,11 +42,8 @@ export default function App() {
     }
   }
 
-  /*
-  * Are the numbers valid.
-  */
-  const isNumbers = (numA: number, numB: number): boolean => {
-    if (isNaN(numA) || isNaN(numB)) return false;
+  const isNumber = (num: number): boolean => {
+    if (isNaN(num)) return false;
     return true;
   }
 
