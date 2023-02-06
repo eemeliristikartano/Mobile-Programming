@@ -18,7 +18,7 @@ export default function Calculator({ navigation }: Props) {
         const uppreInputAsNumber = Number(uppreInput.replace(',', '.'));
         const lowerInputAsNumber = Number(lowerInput.replace(',', '.'));
         // If the numbers are valid.
-        if (isNumber(uppreInputAsNumber) && isNumber(lowerInputAsNumber)) {
+        if (!isNaN(uppreInputAsNumber) && !isNaN(lowerInputAsNumber)) {
 
             // If the operation is an addtion.
             if (operation === '+') {
@@ -38,15 +38,6 @@ export default function Calculator({ navigation }: Props) {
             Alert.alert('Error', 'Input must be a number!');
         }
     }
-
-    const isNumber = (num: number): boolean => {
-        if (isNaN(num)) return false;
-        return true;
-    }
-
-    /*
-  * Add calculation to history.
-  */
 
     const addToHistory = (numA: number, numB: number, operation?: string): void => {
         if (operation === '+') {
